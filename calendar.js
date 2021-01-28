@@ -42,17 +42,12 @@ if(hourToUpdate && itemToAdd) {
 }
 });
 
+var hourArray = ["nine","ten","eleven","twelve","one","two","three","four","five"];
 // display current to do list items will go here.
-
-$('#nine').html(localStorage.getItem(9));
-$('#ten').html(localStorage.getItem(10));
-$('#eleven').html(localStorage.getItem(11));
-$('#twelve').html(localStorage.getItem(12));
-$('#one').html(localStorage.getItem(13));
-$('#two').html(localStorage.getItem(14));
-$('#three').html(localStorage.getItem(15));
-$('#four').html(localStorage.getItem(16));
-$('#five').html(localStorage.getItem(17));
+for (var i = 0; i < hourArray.length; i++){
+  var hourString = hourArray[i];
+  $(`#${hourString}`).html(localStorage.getItem( 9 + i));
+}
 
 $(document).ready(function(){
 rowClass()
